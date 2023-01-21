@@ -16,10 +16,6 @@ df.to_csv('output.csv')
 
 If you would like to contribute to the development of this API, please feel free to fork the repository and submit pull requests. We welcome any contributions that will help improve the functionality of the API.
 
-## License
-
-This API is released under the MIT License
-
-## OSupport
+## Support
 
 If you have any questions or issues using this API, please open an issue in the repository or contact the developer directly.
