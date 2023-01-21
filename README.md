@@ -1,6 +1,6 @@
-# Boditrax API
+# Download Boditrax Data
 
-This API allows you to download data from Boditrax in a dataframe format and then save it in csv. 
+This python API allows you to download data from Boditrax in a dataframe format and then save it in csv. 
 
 ## Usage
 
