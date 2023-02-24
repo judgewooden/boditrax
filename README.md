@@ -4,13 +4,16 @@ This python API allows you to download data from Boditrax in a dataframe format 
 
 ## Usage
 
-This library uses the browser_cookie3 library for gathering cookies from your local browser for use when interacting with boditrax.
 ```
 b = Boditrax()
 b.get_from_cloud()
 df = b.to_dataframe()
 df.to_csv('output.csv')
 ```
+
+## Authentication
+
+This uses the browser_cookie3 library for gathering cookies from your local browser for interacting with boditrax.
 
 ## Contributing
 
