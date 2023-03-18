@@ -2,6 +2,7 @@
 # pylint: disable=line-too-long
 from http.cookiejar import CookieJar
 import datetime
+import random
 import json
 import pandas as pd
 import requests
@@ -10,14 +11,12 @@ import re
 import time
 
 class Boditrax2:
-    """
-        List of items to retreive from cloud
-    """
+    """ Extract items into json """
+    json_data = []
     items = ["Weight", "Muscle", "Fat", "Water", "Bone", "LegMuscleScore", "PhaseAngle", "FatFree", "VisceralFat", "MetabolicAge", "BasalMetabolicRate", "BMI"]
 
     def __init__( self, cookiejar: CookieJar = None):
         self.__fields: list = []
-
         self.__session = requests.Session()
         self.__session.headers.update({
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36"
@@ -51,10 +50,10 @@ class Boditrax2:
                     raise Exception("Response not html")
             else:
                 raise Exception(f"Status code: {result.status_code}")
-            time.sleep(1)
+            time.sleep(random.uniform(0.5, 2))
 
     def to_dataframe(self):
-        """ convert the jason data element to a dataframe"""
+        """ convert the json to a dataframe"""
         df = pd.DataFrame(self.json_data)
         df = df.drop('id', axis=1)
         return df.pivot(index='date', columns='category', values='value')
