@@ -4,11 +4,21 @@ This python API allows you to download data from Boditrax in a dataframe format 
 
 ## Usage
 
+### BODITRAX 2
+```
+b = Boditrax2()
+b.get_from_cloud()
+df = b.to_dataframe()
+df.to_csv('boditrax2.csv')
+```
+use ```year``` as argument to ```get_from_cloud( year )``` to get values in the past
+
+### BODITRAX 1
 ```
 b = Boditrax()
 b.get_from_cloud()
 df = b.to_dataframe()
-df.to_csv('output.csv')
+df.to_csv('boditrax1.csv')
 ```
 
 ## Authentication
