@@ -80,15 +80,4 @@ if __name__ == "__main__":
     b.get_from_cloud()
     df = b.to_dataframe()
     df.to_csv("boditrax.csv")
-
-    # b.save_to_file(filename='output.json')
-    # b.load_from_file(filename='output.json')
-
-    print("LENGTH", len(df))
-
-    # print(b.fatpercentage['name'])
-    # print(b.fatpercentage['primaryUnit'])
-    # print(b.fatpercentage)
-
-    print(df.tail(100))
  
