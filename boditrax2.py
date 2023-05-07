@@ -4,11 +4,11 @@ from http.cookiejar import CookieJar
 import datetime
 import random
 import json
+import re
+import time
 import pandas as pd
 import requests
 import browser_cookie3
-import re
-import time
 
 class Boditrax2:
     """ Extract items into json """
@@ -63,3 +63,4 @@ if __name__ == "__main__":
     b.get_from_cloud()
     df = b.to_dataframe()
     df.to_csv("boditrax2.csv")
+ 
